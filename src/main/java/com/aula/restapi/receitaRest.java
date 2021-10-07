@@ -21,7 +21,7 @@ public class receitaRest {
     private repositorioReceita repositorio;
 
     @GetMapping
-    public List<receita>listar(){
+    public List<receita> listar(){
         return repositorio.findAll();
     }
 

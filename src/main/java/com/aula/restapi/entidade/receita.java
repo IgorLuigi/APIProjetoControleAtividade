@@ -17,7 +17,7 @@ public class receita {
     private String valor;
     @Column(nullable = false)
     private String data;
-
+ 
     public Long getId() {
         return id;
     }
