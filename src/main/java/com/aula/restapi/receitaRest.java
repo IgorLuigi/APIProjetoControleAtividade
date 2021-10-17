@@ -8,6 +8,7 @@ import com.aula.restapi.entidade.receita;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -36,9 +37,9 @@ public class receitaRest {
         repositorio.save(receita);
     }
 
-    @DeleteMapping
-    public void excluir(@RequestBody receita receita){
-        repositorio.delete(receita);
+    @DeleteMapping("/{id}")
+    public void excluir(@PathVariable Long id){
+        repositorio.deleteById(id);
     
     }
 }
