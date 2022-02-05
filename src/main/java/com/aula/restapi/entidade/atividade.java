@@ -7,17 +7,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class receita {
+public class atividade {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(nullable = false)
     private String descricao;
     @Column(nullable = false)
-    private String valor;
+    private Float prioridade;
     @Column(nullable = false)
-    private String data;
- 
+    private String tipoAtividade;
+    @Column(nullable = true)
+    private Boolean feito;
+
     public Long getId() {
         return id;
     }
@@ -30,16 +32,24 @@ public class receita {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    public String getValor() {
-        return valor;
+    public Float getPrioridade() {
+        return prioridade;
     }
-    public void setValor(String valor) {
-        this.valor = valor;
+    public void setPrioridade(Float prioridade) {
+        this.prioridade = prioridade;
     }
-    public String getData() {
-        return data;
+    public String getTipoAtividade() {
+        return tipoAtividade;
     }
-    public void setData(String data) {
-        this.data = data;
+    public void setTipoAtividade(String tipoAtividade) {
+        this.tipoAtividade = tipoAtividade;
     }
+    public Boolean getFeito() {
+        return feito;
+    }
+    public void setFeito(Boolean feito) {
+        this.feito = feito;
+    }
+ 
+    
 }

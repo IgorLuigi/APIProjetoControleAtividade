@@ -2,8 +2,8 @@ package com.aula.restapi;
 
 import java.util.List;
 
-import com.aula.restapi.database.repositorioReceita;
-import com.aula.restapi.entidade.receita;
+import com.aula.restapi.database.repositorioAtividade;
+import com.aula.restapi.entidade.atividade;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -16,25 +16,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/receita")
-public class receitaRest {
+@RequestMapping("/atividade")
+public class atividadeRest {
     @Autowired
-    private repositorioReceita repositorio;
+    private repositorioAtividade repositorio;
 
     @GetMapping
-    public List<receita> listar(){
+    public List<atividade> listar(){
         return repositorio.findAll();
     }
 
     @PostMapping
-    public void salvar(@RequestBody receita receita){
-        repositorio.save(receita);
+    public void salvar(@RequestBody atividade atividade){
+        repositorio.save(atividade);
     }
 
     @PutMapping
-    public void alterar(@RequestBody receita receita){
-        if(receita.getId()>0)
-        repositorio.save(receita);
+    public void alterar(@RequestBody atividade atividade){
+        if(atividade.getId()>0)
+        repositorio.save(atividade);
     }
 
     @DeleteMapping("/{id}")
